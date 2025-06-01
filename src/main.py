@@ -249,7 +249,7 @@ class FreelancerAnalyzer:
     def show_data_info(self):
         """Display information about the loaded dataset."""
         info = self.data_loader.get_data_info()
-        stats = self.data_loader.get_basic_stats()
+        self.data_loader.get_basic_stats()
         quality = self.data_loader.validate_data_quality()
 
         # Dataset overview

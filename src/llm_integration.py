@@ -78,7 +78,6 @@ class SimpleLLMProcessor:
 
             # Configure proxy if available using httpx
             http_client_kwargs = {}
-            proxy_configured = False
 
             if (
                 os.getenv("HTTP_PROXY")
@@ -104,7 +103,6 @@ class SimpleLLMProcessor:
                             timeout=timeout,
                         )
                         http_client_kwargs["http_client"] = http_client
-                        proxy_configured = True
                         print(f"🌐 Using proxy for Claude: {list(proxies.keys())}")
 
                 except ImportError:
